@@ -45,3 +45,19 @@ Server setelah semua client mengirim pesan:
 ![alt text](image-8.png)
 
 Dapat dilihat bahwa pada sisi server, printout yang muncul adalah "listening on port 8080", tidak lagi di port 2000 seperti sebelumnya. Kemudian, untuk interaksi yang muncul di terminal kurang lebih sama seperti sebelumnya, mengingat yang diubah hanya portnya. Perlu dicatat bahwa ketika port pada file server dan client berbeda, maka akan terjadi error. Hal ini terjadi karena server keep track connections dari client di suatu port, sedangkan client mengirimkan request ke port lain. Namun, pada kasus ini kedua file server dan client telah diset pada port yang sama. Dengan demikian, server dan client tetap dapat berinteraksi dengan lancar. Hence, interaksi yang terjadi sama seperti pada bagian 2.1 sebelumnya.
+
+### 2.3. Small changes. Add some information to client
+
+Client 1 setelah semua client mengirim pesan:
+![alt text](image-13.png)
+
+Client 2 setelah semua client mengirim pesan:
+![alt text](image-14.png)
+
+Client 3 setelah semua client mengirim pesan:
+![alt text](image-15.png)
+
+Server setelah semua client mengirim pesan:
+![alt text](image-12.png)
+
+Saya melakukan perubahan yang dapat dilihat pada line 23 file client.rs dan line 25 file server.rs. Perubahan tersebut bertujuan untuk menampilkan IP dan Port dari client yang mengirimkan pesan. Tujuannya adalah sebagai identifier dari setiap client mengingat setiap client tidak memiliki nama, sehingga di sini menggunakan IP dan Port. Identifier ini diperlukan karena setiap client akan mendapatkan informasi kiriman pesan client, sehingga dipeerlukan informasi dari masing-masing client. Sebagaimana dapat dilihat pada screenshot, awalnya "From server: Hello from Client 1" pada bagian 2.2. Pada bagian 2.3 ini, menjadi ada informasi IP dan Port client yang ebrsangkutan "Ravie's Computer - From server: 127.0.0.1:54496: Hello from Client 1".
